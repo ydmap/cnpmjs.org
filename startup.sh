@@ -1,3 +1,3 @@
-cde /data/ydmap/npm/cnpmjs.org
+cd /data/ydmap/npm/cnpmjs.org
 
 npm run start
