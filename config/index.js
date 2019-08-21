@@ -10,7 +10,7 @@ var utility = require('utility');
 var version = require('../package.json').version;
 
 var root = path.dirname(__dirname);
-var dataDir = path.join(process.env.HOME || root, '.cnpmjs.org');
+var dataDir = path.join(root, '.cnpmjs.org');
 
 var config = {
   version: version,
