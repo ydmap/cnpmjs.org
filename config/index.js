@@ -72,7 +72,7 @@ var config = {
     interval: 1000 * 60 * 60 * 24,
     whiteList: [],
     blackList: [],
-    message: 'request frequency limited, any question, please contact fengmk2@gmail.com',
+    message: 'request frequency limited, any question, please contact dev@ydmap.cn',
   },
 
   enableCompress: false, // enable gzip response or not
@@ -80,22 +80,22 @@ var config = {
   // default system admins
   admins: {
     // name: email
-    fengmk2: 'fengmk2@gmail.com',
-    admin: 'admin@cnpmjs.org',
-    dead_horse: 'dead_horse@qq.com',
+    admin: 'dev@ydmap.cn',
   },
 
   // email notification for errors
   // check https://github.com/andris9/Nodemailer for more informations
   mail: {
-    enable: false,
-    appname: 'cnpmjs.org',
-    from: 'cnpmjs.org mail sender <adderss@gmail.com>',
-    service: 'gmail',
+    enable: true,
+    appname: 'npm mirror',
+    from: 'npm mirror mail sender <dev@ydmap.cn>',
+    host: 'smtp.exmail.qq.com', // 这是腾讯的邮箱 host
+    port: 465, // smtp 端口
+    secure: true,
     auth: {
-      user: 'address@gmail.com',
-      pass: 'your password'
-    }
+      user: 'dev@ydmap.cn', // 发送邮件的邮箱名
+      pass: '385dciEypL8xVUx7', // 邮箱的授权码，也可以使用邮箱登陆密码
+    },
   },
 
   logoURL: 'https://os.alipayobjects.com/rmsportal/oygxuIUkkrRccUz.jpg', // cnpm logo image url
@@ -115,13 +115,13 @@ var config = {
    */
 
   database: {
-    db: 'cnpmjs_test',
+    db: 'cnpmjs',
     username: 'root',
-    password: '',
+    password: 'Ydmap@2019',
 
     // the sql dialect of the database
     // - currently supported: 'mysql', 'sqlite', 'postgres', 'mariadb'
-    dialect: 'sqlite',
+    dialect: 'mysql',
 
     // custom host; default: 127.0.0.1
     host: '127.0.0.1',
@@ -168,7 +168,7 @@ var config = {
   // enable private mode or not
   // private mode: only admins can publish, other users just can sync package from source npm
   // public mode: all users can publish
-  enablePrivate: false,
+  enablePrivate: true,
 
   // registry scopes, if don't set, means do not support scopes
   scopes: [ '@cnpm', '@cnpmtest', '@cnpm-test' ],
@@ -206,7 +206,7 @@ var config = {
   // none: do not sync any module, proxy all public modules from sourceNpmRegistry
   // exist: only sync exist modules
   // all: sync all modules
-  syncModel: 'none', // 'none', 'all', 'exist'
+  syncModel: 'exist', // 'none', 'all', 'exist'
 
   syncConcurrency: 1,
   // sync interval, default is 10 minutes
