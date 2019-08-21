@@ -159,7 +159,7 @@ var config = {
   downloadTgzDontCheckModule: false,
 
   // registry url name
-  registryHost: 'r.cnpmjs.org',
+  registryHost: '127.0.0.1:7001',
 
   /**
    * registry mode config
